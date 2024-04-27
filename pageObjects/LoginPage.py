@@ -1,16 +1,17 @@
 import time
 
-from selenium .webdriver.common.by import By
+from selenium.webdriver.common.by import By
+
 
 class LoginPage:
     #locatore
     text_email_name="email"
     text_password_name="password"
     button_login_xpath="//button[normalize-space()='Login']"
-    Msg_confirmation_xpath="//h2[normalize-space()='My Account']"
+    Msg_MyAccount_xpath="//h2[normalize-space()='My Account']"
 
     # constructors
-    def __init__(self,driver):
+    def __init__(self,driver):        # This is the constructor which will initiate the driver
         self.driver=driver
 
     # Action method
@@ -26,8 +27,7 @@ class LoginPage:
 
     def MyAccountPage(self):
         try:
-            return self.driver.find_element(By.XPATH,self.Msg_confirmation_xpath).is_displayed()
-
+            return self.driver.find_element(By.XPATH,self.Msg_MyAccount_xpath).is_displayed()
         except:
             return False
 

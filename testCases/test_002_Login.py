@@ -8,11 +8,11 @@ from utilities.readProrperties import ReadConfig
 from utilities.customLogger import LogGen
 
 class Test_Login():
-    baseURL=ReadConfig.getApplicationURL()
+    baseURL=ReadConfig.getApplicationUrl()
     logger=LogGen.loggGenaration()
 
-    user=ReadConfig.getUserEmail()
-    password=ReadConfig.getUserPassword()
+    user=ReadConfig.getUserName()
+    password=ReadConfig.getPassword()
 
     @pytest.mark.sanity
     def test_Login(self,setup):
@@ -25,7 +25,7 @@ class Test_Login():
         self.logger.info("***** Creating object for HomePage *****")
         self.hp=HomePage(self.driver)           # passing the driver(self.driver) in argument
         self.logger.info("***** Clicking on my account *****")
-        self.hp.clickMyAccount()
+        self.hp.clickMyAcount()
         self.hp.clickLogin()
 
     # creating object for LoginPage class (from pageObject package)
@@ -44,6 +44,5 @@ class Test_Login():
             # self.driver.save_screenshot(os.getcwd()+"\\screenshots\\"+"test_accountReg.png")
             self.driver.close()
             assert False
-
 
         self.logger.info("******* End of the Test_002_Login ***********")

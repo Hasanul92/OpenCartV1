@@ -10,12 +10,10 @@ from utilities.customLogger import LogGen
 
 
 class Test_Login_DDT():
-    baseURL=ReadConfig.getApplicationURL()
+    baseURL=ReadConfig.getApplicationUrl()
     logger=LogGen.loggGenaration()
 
     file=os.path.abspath(os.curdir)+"\\testData\\OpenCart_LoginData.xlsx"
-
-
 
     def test_Login_ddt(self,setup):
         self.logger.info("******** Starting test_003_DataDriven ********")
@@ -31,7 +29,7 @@ class Test_Login_DDT():
         self.ma=MyAccountPage(self.driver)  # Creating object for MyAccountPage object class
 
         # Performing actions on HomePage
-        self.hp.clickMyAccount()
+        self.hp.clickMyAcount()
         self.hp.clickLogin()
 
         for r in range(2,self.rows+1):
